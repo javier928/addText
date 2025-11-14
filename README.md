@@ -4,5 +4,5 @@ addText.exe admits two parameters: the .png file and the text you want to add to
 Example:
 addtext.exe background.png "javier928"
 Result:
-The text "javier928" will be placed in the picture..
+The text "javier928" will be placed in the picture.
 Find the output.png file in your folder.
