@@ -1,4 +1,4 @@
-﻿//*
+//*
 // This code requires the PdfSharp library.
 // Run the following command in your terminal or Package Manager Console to install the core version of 
 // PdfSharp (compatible with .NET Core and .NET 6/7/8):
@@ -19,7 +19,10 @@ class Program
     {
         // Settings
         Console.WriteLine(" ");
+        Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine("PDF Page Joiner - Combining first page of file2.pdf with all pages of file1.pdf");
+        // Reset the color back to default (important so later text isn't cyan)
+        Console.ResetColor();
         Console.WriteLine(" ");
         Console.WriteLine("Files file1.pdf and file2.pdf must exist in the folder c:/dbase/ for this script to work properly. ");
         Console.WriteLine(" ");
@@ -51,6 +54,7 @@ class Program
                     {
                         // Add the first page (Index 0) of file2 to the output
                         outputDocument.AddPage(pdf2.Pages[0]);
+                        Console.WriteLine($" ");
                         Console.WriteLine($"Added Page 1 from {file2Path}");
                     }
                 }
@@ -71,8 +75,12 @@ class Program
 
                 // STEP 3: Save the result
                 outputDocument.Save(outputName);
-                Console.WriteLine($" ");
+                //Console.WriteLine($" ");
+                Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine($"\nSuccess! Created {outputName}");
+                // Reset the color back to default (important so later text isn't cyan)
+                Console.ResetColor();
+                Console.WriteLine($" ");
             }
         }
         catch (Exception ex)
