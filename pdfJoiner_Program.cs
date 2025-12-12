@@ -8,6 +8,10 @@
 // then appends all pages of file1.pdf, effectively "joining" them in that specific order.
 // Files file1.pdf and file2.pdf must exist in the folder c:\dbase\ for this script to work properly.
 
+// Type this in the terminal in Visual Studio Code in order to compile and generate an .exe file:
+// dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true /p:IncludeAllContent=true
+
+
 using System;
 using System.IO;
 using PdfSharp.Pdf;
@@ -89,3 +93,4 @@ class Program
         }
     }
 }
+
