@@ -24,7 +24,7 @@ class Program
         // Settings
         Console.WriteLine(" ");
         Console.ForegroundColor = ConsoleColor.Cyan;
-        Console.WriteLine("PDF Page Joiner - Combining first page of file2.pdf with all pages of file1.pdf");
+        Console.WriteLine("PDF Page Joiner - Combining pages of file2.pdf with pages of file1.pdf");
         // Reset the color back to default (important so later text isn't cyan)
         Console.ResetColor();
         Console.WriteLine(" ");
@@ -93,4 +93,5 @@ class Program
         }
     }
 }
+
 
