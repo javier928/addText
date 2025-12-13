@@ -6,7 +6,7 @@
 
 // This script creates a new PDF, adds the first page of file2.pdf, and
 // then appends all pages of file1.pdf, effectively "joining" them in that specific order.
-// Files file1.pdf and file2.pdf must exist in the folder c:\dbase\ for this script to work properly.
+// Files file1.pdf and file2.pdf must exist in the same folder WHERE this app is 
 
 // Type this in the terminal in Visual Studio Code in order to compile and generate an .exe file:
 // dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true /p:IncludeAllContent=true
@@ -28,16 +28,20 @@ class Program
         // Reset the color back to default (important so later text isn't cyan)
         Console.ResetColor();
         Console.WriteLine(" ");
-        Console.WriteLine("Files file1.pdf and file2.pdf must exist in the folder c:/dbase/ for this script to work properly. ");
+        Console.WriteLine("Files file1.pdf and file2.pdf must exist in the same folder as this application for this script to work properly.");
         Console.WriteLine(" ");
-        Console.WriteLine("Processing...");
-        // Use verbatim strings for Windows paths and ensure the filename is separated by a backslash
-        // string file1Path =  @"C:\Users\ACER\Documents\EjemploC95\file2.pdf"; // The file containing one or more pages
-        // string file2Path =  @"C:\Users\ACER\Documents\EjemploC95\file1.pdf"; // The file we need the FIRST page from
-        // string outputName = @"C:\Users\ACER\Documents\EjemploC95\joined_output.pdf";
-        string file1Path =  @"C:\dbase\file2.pdf"; // The file containing one or more pages
-        string file2Path =  @"C:\dbase\file1.pdf"; // The file we need the FIRST page from
-        string outputName = @"C:\dbase\joined_output.pdf";
+        Console.WriteLine("Processing files...");
+        Console.WriteLine(" ");
+        // display the working folder...
+        Console.WriteLine($"Working folder: {AppContext.BaseDirectory}");
+
+        // Use the application folder so the app is portable (works from any PC or pendrive)
+        string baseDir = AppContext.BaseDirectory;
+        // file1.pdf -> file containing one or more pages (will be appended fully)
+        // file2.pdf -> file we need the FIRST page from (its first page is added first)
+        string file1Path = Path.Combine(baseDir, "file1.pdf");
+        string file2Path = Path.Combine(baseDir, "file2.pdf");
+        string outputName = Path.Combine(baseDir, "joined_output.pdf");
         // Validate files exist
         if (!File.Exists(file1Path) || !File.Exists(file2Path))
         {
@@ -93,6 +97,3 @@ class Program
         }
     }
 }
-
-
-
