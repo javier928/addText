@@ -7,3 +7,4 @@ Result:
 The text "javier928" will be placed in the picture.
 Find the output.png file in your folder.
 [ pdfJoiner.exe joins two pdf files. file1.pdf and file2.pdf must be in the folder c:/dbase ]
+[_createCover.exe creates a single A4 PDF named page0cover.pdf containing centered surname. Surname can be given as a parameter in the command prompt]. 
