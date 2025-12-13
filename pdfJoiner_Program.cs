@@ -7,6 +7,7 @@
 // This script creates a new PDF, adds the first page of file2.pdf, and
 // then appends all pages of file1.pdf, effectively "joining" them in that specific order.
 // Files file1.pdf and file2.pdf must exist in the same folder WHERE this app is 
+// executed from for this script to work properly.
 
 // Type this in the terminal in Visual Studio Code in order to compile and generate an .exe file:
 // dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true /p:IncludeAllContent=true
@@ -97,3 +98,4 @@ class Program
         }
     }
 }
+
