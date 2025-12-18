@@ -6,5 +6,5 @@ addtext.exe background.png "javier928"
 Result:
 The text "javier928" will be placed in the picture.
 Find the output.png file in your folder.
-[ pdfJoiner.exe joins two pdf files. file1.pdf and file2.pdf must be in the folder c:/dbase ]
+EXTRAS: [ pdfJoiner.exe joins two pdf files. file1.pdf and file2.pdf must be in the folder c:/dbase ]
 [ createCover.exe creates a single A4 PDF named page0cover.pdf containing centered surname. Surname can be given as a second parameter in the command prompt. "Courier" can be given as a third parameter. If no third parameter is given, Times New Roman will be used for generating the pdf file ]. 
