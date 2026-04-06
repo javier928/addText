@@ -10,10 +10,11 @@ echo  2. Run createODP.exe to create a presentation with one slide called presen
 echo  3. Run joinODPfiles.exe to join two presentations (.odp files)
 echo  4. Run pdf4.exe to create a single A4 PDF file with a centered image     
 echo  5. Run createCover.exe to create a PDF file with your NAME and SURNAME (centered)
-echo  6. RUN pdfJoiner.exe to join PDF files. Files file1.pdf and file2.pdf must be in C:\dbase
-echo  7. RUN addText.exe to add the text #Javier928# to the file background.png. Preview [output.png] 
-echo  8. RUN localsend.org to send a file to a nearby computer
-echo  9. Exit
+echo  6. Run pdfJoiner.exe to join PDF files. Files file1.pdf and file2.pdf must be in C:\dbase
+echo  7. Run addText.exe to add the text #Javier928# to the file background.png. Preview [output.png] 
+echo  8. Run localsend.org to send a file to a nearby computer
+echo  9. Run ofimatica.website
+echo  0. Exit
 echo.
 
 set /p choice= Enter your choice (1-9): 
@@ -26,7 +27,8 @@ if "%choice%"=="5" goto RUN_COVER
 if "%choice%"=="6" goto RUN_PDFJOINER
 IF "%choice%"=="7" goto RUN_ADDTEXT
 if "%choice%"=="8" goto RUN_LOCALSEND
-if "%choice%"=="9" goto END
+if "%choice%"=="9" goto RUN_LOCAL
+if "%choice%"=="0" goto END
 
 echo Invalid option. Try again.
 pause
@@ -63,7 +65,6 @@ createCover.exe
 pause
 goto MENU
 
-
 :RUN_PDFJOINER
 echo Loading...
 pdfjoiner.exe
@@ -79,6 +80,12 @@ goto MENU
 :RUN_LOCALSEND
 echo Loading...
 start " " "https://web.localsend.org/"
+pause
+goto MENU
+
+:RUN_LOCAL
+echo Loading...
+start " " "https://ofimatica.website"
 pause
 goto MENU
 
