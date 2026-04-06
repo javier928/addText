@@ -12,6 +12,7 @@ echo  4. Run pdf4.exe to create a single A4 PDF file with a centered image
 echo  5. Run createCover.exe to create a PDF file with your NAME and SURNAME (centered)
 echo  6. RUN pdfJoiner.exe to join PDF files. Files file1.pdf and file2.pdf must be in C:\dbase
 echo  7. RUN addText.exe to add the text #Javier928# to the file background.png. Preview [output.png] 
+echo  8. RUN localsend.org to send a file to a nearby computer
 echo  9. Exit
 echo.
 
@@ -24,6 +25,7 @@ if "%choice%"=="4" goto RUN_PDF4
 if "%choice%"=="5" goto RUN_COVER
 if "%choice%"=="6" goto RUN_PDFJOINER
 IF "%choice%"=="7" goto RUN_ADDTEXT
+if "%choice%"=="8" goto RUN_LOCALSEND
 if "%choice%"=="9" goto END
 
 echo Invalid option. Try again.
@@ -69,8 +71,14 @@ pause
 goto MENU
                
 :RUN_ADDTEXT
-echo Loading
+echo Loading...
 addtext.exe
+pause
+goto MENU
+
+:RUN_LOCALSEND
+echo Loading...
+start " " "https://web.localsend.org/"
 pause
 goto MENU
 
